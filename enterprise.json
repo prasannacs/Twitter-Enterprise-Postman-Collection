@@ -1,0 +1,416 @@
+{
+	"info": {
+		"_postman_id": "3e94fa78-5d7b-4bef-9439-19111cefa03c",
+		"name": "Twitter Enterprise API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Engagement API",
+			"item": [
+				{
+					"name": "Totals",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenSecret",
+									"value": "{{token_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{consumer_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{consumer_key}}",
+									"type": "string"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tweet_ids\": [\n        \"1370423224094355456\"\n    ],\n      \"engagement_types\": [\n          \"engagements\",\n          \"impressions\",\n          \"retweets\",\n          \"replies\",\n        \"favorites\",\n        \"quote_tweets\"\n    ],\n    \"groupings\": {\n      \"grouping name\": {\n        \"group_by\": [\n          \"tweet.id\",\n          \"engagement.type\"\n        ]\n      }\n    }\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://data-api.twitter.com/insights/engagement/totals",
+							"protocol": "https",
+							"host": [
+								"data-api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"insights",
+								"engagement",
+								"totals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "28hr",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "AAAAAAAAAAAAAAAAAAAAAN1GKgEAAAAAPJSDmoI8hY9vB6ZgxeBgU9OVSrM%3DMRUYjL7LktexG7QAMMy0UaCkfYmVzEIyi1juXQePwADiMBkjFE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"tweet_ids\": [\n       \"1370423224094355456\"\n    ],\n      \"engagement_types\": [\n        \"impressions\",\n        \"engagements\",\n        \"url_clicks\",\n        \"detail_expands\"\n    ],\n    \"groupings\": {\n      \"grouping name\": {\n        \"group_by\": [\n          \"tweet.id\",\n          \"engagement.type\",\n          \"engagement.hour\"\n        ]\n      }\n    }\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://data-api.twitter.com/insights/engagement/28hr",
+							"protocol": "https",
+							"host": [
+								"data-api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"insights",
+								"engagement",
+								"28hr"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Historical",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenSecret",
+									"value": "{{token_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{consumer_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{consumer_key}}",
+									"type": "string"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tweet_ids\": [\n       \"1370423224094355456\"\n    ],\n      \"engagement_types\": [\n        \"impressions\",\n        \"engagements\",\n        \"url_clicks\",\n        \"detail_expands\"\n    ],\n    \"groupings\": {\n      \"grouping name\": {\n        \"group_by\": [\n          \"tweet.id\",\n          \"engagement.type\",\n          \"engagement.day\"\n        ]\n      }\n    }\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://data-api.twitter.com/insights/engagement/historical",
+							"protocol": "https",
+							"host": [
+								"data-api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"insights",
+								"engagement",
+								"historical"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Full Archive Search",
+			"item": [
+				{
+					"name": "Search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"gnip\",\"maxResults\":10}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gnip-api.twitter.com/search/fullarchive/accounts/{{gnip_account}}/prod.json",
+							"protocol": "https",
+							"host": [
+								"gnip-api",
+								"twitter",
+								"com"
+							],
+							"path": [
+								"search",
+								"fullarchive",
+								"accounts",
+								"{{gnip_account}}",
+								"prod.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HPT",
+			"item": [
+				{
+					"name": "Create an HPT Job",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"publisher\":\"Twitter\",\n    \"dataFormat\":\"original\",\n    \"fromDate\":\"202101180000\",\n    \"toDate\":\"202101250005\",\n    \"title\":\"DunkinJob\",\n    \"rules\":\n        [\n            {\n                \"tag\" : \"dunkin\",\n                \"value\":\"dunkin OR Dumkin OR DunkinDonuts OR Dunkin Donuts\"\n            }\n        ]\n}"
+						},
+						"url": {
+							"raw": "https://gnip-api.gnip.com/historical/powertrack/accounts/{{gnip_account}}/publishers/twitter/jobs.json",
+							"protocol": "https",
+							"host": [
+								"gnip-api",
+								"gnip",
+								"com"
+							],
+							"path": [
+								"historical",
+								"powertrack",
+								"accounts",
+								"{{gnip_account}}",
+								"publishers",
+								"twitter",
+								"jobs.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a HPT Job",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://gnip-api.gnip.com:443/historical/powertrack/accounts/{{gnip_account}}/publishers/twitter/jobs/{{gnip_job}}.json",
+							"protocol": "https",
+							"host": [
+								"gnip-api",
+								"gnip",
+								"com"
+							],
+							"port": "443",
+							"path": [
+								"historical",
+								"powertrack",
+								"accounts",
+								"{{gnip_account}}",
+								"publishers",
+								"twitter",
+								"jobs",
+								"{{gnip_job}}.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Accept a HPT Job",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"status\": \"accept\"}"
+						},
+						"url": {
+							"raw": "https://gnip-api.gnip.com/historical/powertrack/accounts/{{gnip_account}}/publishers/twitter/jobs/{{gnip_job}}json",
+							"protocol": "https",
+							"host": [
+								"gnip-api",
+								"gnip",
+								"com"
+							],
+							"path": [
+								"historical",
+								"powertrack",
+								"accounts",
+								"{{gnip_account}}",
+								"publishers",
+								"twitter",
+								"jobs",
+								"{{gnip_job}}json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get results for an HPT job",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://gnip-api.gnip.com:443/historical/powertrack/accounts/{{gnip_account}}/publishers/twitter/jobs/{{gnip_job}}/results.json",
+							"protocol": "https",
+							"host": [
+								"gnip-api",
+								"gnip",
+								"com"
+							],
+							"port": "443",
+							"path": [
+								"historical",
+								"powertrack",
+								"accounts",
+								"{{gnip_account}}",
+								"publishers",
+								"twitter",
+								"jobs",
+								"{{gnip_job}}",
+								"results.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "password",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "username",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
